@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=teaching_calendar
+POSTGRES_USER=sZFpNzsOTAoZkSCmwEIssGkpJUISKMLO
+POSTGRES_PASSWORD=Nek1xjzaE25PmwVlFDeORgEWSnpwbiuhHc4qrGCbjuoyRD2ZCNgu1jc1y7vpLaLQ
