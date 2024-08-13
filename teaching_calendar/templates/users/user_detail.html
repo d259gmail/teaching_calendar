@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  Teacher Dashboard: {{ object.username }}
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Teacher Dashboard: {{ object.username }}</h2>
+        <p>Subjects Taught: {{ subjects|join:", " }}</p>
+      </div>
+    </div>
+    <h3>Upcoming Events:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Lesson</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for lesson in lessons %}
+          <tr>
+            <td>{{ lesson.subject.name }}</td>
+            <td>{{ lesson.name }}</td>
+            <td>{{ lesson.date }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p>
+      <a href="{% url 'users:calendar_app:download_schedule' 'excel' %}">Download Schedule (Excel)</a>
+      <a href="{% url 'users:calendar_app:download_schedule' 'pdf' %}">Download Schedule (PDF)</a>
+    </p>
+  </div>
+{% endblock content %}

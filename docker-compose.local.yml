@@ -1,0 +1,34 @@
+volumes:
+  teaching_calendar_local_postgres_data: {}
+  teaching_calendar_local_postgres_data_backups: {}
+  
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    image: teaching_calendar_local_django
+    container_name: teaching_calendar_local_django
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app:z
+    env_file:
+      - ./.envs/.local/.django
+      - ./.envs/.local/.postgres
+    ports:
+      - '8000:8000'
+    command: /start
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: teaching_calendar_production_postgres
+    container_name: teaching_calendar_local_postgres
+    volumes:
+      - teaching_calendar_local_postgres_data:/var/lib/postgresql/data
+      - teaching_calendar_local_postgres_data_backups:/backups
+    env_file:
+      - ./.envs/.local/.postgres
