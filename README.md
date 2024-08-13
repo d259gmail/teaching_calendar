@@ -37,7 +37,12 @@ Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings
 For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
 
 ### Setting up the teacher, lessons and subjects
-      After logging into the platform and creating the superuser, log in to the Django admin portal. In the Django admin, create the user, then add subjects and lessons. Once this is done, return to the platform and click on the "My Profile" button. You will be able to see your schedule and other details there. A download option will also be available on the same page to download the teacher's schedule. Please note that all these pages are authenticated, and you will not be able to access them without logging in.
+      - After logging into the platform and creating the superuser, log in to the Django admin portal. 
+      - In the Django admin, create the user, then add subjects and lessons. 
+      - Once this is done, return to the platform and click on the "My Profile" button. 
+      - You will be able to see your schedule and other details there. 
+      - A download option will also be available on the same page to download the teacher's schedule. 
+      - Please note that all these pages are authenticated, and you will not be able to access them without logging in.
 
 ### Live reloading and Sass CSS compilation
 
